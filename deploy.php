@@ -17,7 +17,9 @@ set('repository', 'git@github.com:fafabedo/venux-ms-api-stream.git');
 set('git_tty', true); 
 
 // Shared files/dirs between deploys 
-set('shared_files', []);
+set('shared_files', [
+  '.env',
+]);
 set('shared_dirs', []);
 
 // Writable dirs by web server 
