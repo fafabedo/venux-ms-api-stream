@@ -9,13 +9,14 @@ class VideoStream {
         VideoOrm.setUserServiceRole()
     }
     async download(req, res) {
-        const { id, key, range } = req.query;
-        if (!id || !key) {
+        const { uuid, key} = req.params;
+        const { range } = req.query;
+        if (!uuid || !key) {
             res.status(400);
             res.send({message: "Missing arguments in request"});
             return res;
         }
-        const video = await VideoOrm.retrieveVideoByUuid(id);
+        const video = await VideoOrm.retrieveVideoByUuid(uuid);
         const videoDetail = await VideoOrm.retrieveVideoDetailByVideoIdAndUuid(video.id, key);
         try {
             let file = videoDetail.file;

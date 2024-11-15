@@ -14,11 +14,11 @@
     "public": true
   },
   {
-    "path": "/video/download",
+    "path": "/video/download/:uuid/:key",
     "controller": "video/stream:download",
     "method": "get",
-    "description": "Video: Video stream service HLS",
-    "params": "id",
+    "description": "Video: Video stream link",
+    "params": "uuid, key",
     "public": true
   }
 ]

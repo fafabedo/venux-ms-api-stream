@@ -18,19 +18,19 @@ const Authentication = require("@vx-auth/Authentication");
 
 app.use(cors());
 
-app.use((req, res, next) => {
+// app.use((req, res, next) => {
 
-    Authentication
-        .setRoutes(routes)
-        .authorize(req, res)
-        .then((res) => {
-            next()
-        })
-        .catch((err) => {
-            res.status(403);
-            res.send({ status: "Forbidden" });
-        });
-})
+//     Authentication
+//         .setRoutes(routes)
+//         .authorize(req, res)
+//         .then((res) => {
+//             next()
+//         })
+//         .catch((err) => {
+//             res.status(403);
+//             res.send({ status: "Forbidden" });
+//         });
+// })
 
 app.get("/help", (req, res) => {
     res.status(200)
