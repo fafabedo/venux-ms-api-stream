@@ -49,7 +49,7 @@ task('deploy', [
     'app:build',
     'deploy:clear_paths',
     'deploy:symlink',
-    // 'pm2:restart',
+    'pm2:restart',
     'deploy:unlock',
     'cleanup',
     'success'
@@ -63,7 +63,7 @@ task('app:build', function() {
     cd('{{release_path}}');
     run('node --version', ['timeout' => null]);
     run('/usr/local/bin/yarn install', ['timeout' => null]);
-    run('/usr/local/bin/yarn add sharp --ignore-engines');
+    // run('/usr/local/bin/yarn add sharp --ignore-engines');
 });
 
 task('pm2:restart', [
