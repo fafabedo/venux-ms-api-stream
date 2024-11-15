@@ -11,6 +11,7 @@ class VideoStream {
     async download(req, res) {
         const { uuid, key} = req.params;
         const { range } = req.query;
+        console.log({uuid, key})
         if (!uuid || !key) {
             res.status(400);
             res.send({message: "Missing arguments in request"});
@@ -19,11 +20,12 @@ class VideoStream {
         const video = await VideoOrm.retrieveVideoByUuid(uuid);
         const videoDetail = await VideoOrm.retrieveVideoDetailByVideoIdAndUuid(video.id, key);
         try {
-            let file = videoDetail.file;
-            if (!fs.existsSync(file)) {
+            let videoPath = videoDetail.file;
+            // videoPath = '/Users/e043280/Temporary/Downloads/Queue2/Alexis\ FAwx/Bigwetbutts\ -\ Alexis\ Fawx\ -\ Anal\ On\ The\ Open\ Sea\ \(2021-08-31\).mp4';
+            console.log({videoPath})
+            if (!fs.existsSync(videoPath)) {
                 throw "File does not exist"
             }
-            const videoPath = file
             const fileSize = videoDetail.size;
             const range = req.headers.range;
             if (range) {
