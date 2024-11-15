@@ -1,0 +1,11 @@
+.vscode
+.env
+.encode
+*.mkv
+*.mp4
+*.html
+
+node_modules/
+
+
+*.log
