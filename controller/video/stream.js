@@ -18,7 +18,9 @@ class VideoStream {
             return res;
         }
         const video = await VideoOrm.retrieveVideoByUuid(uuid);
+        console.log({video})
         const videoDetail = await VideoOrm.retrieveVideoDetailByVideoIdAndUuid(video.id, key);
+        console.log({videoDetail})
         try {
             let videoPath = videoDetail.file;
             // videoPath = '/Users/e043280/Temporary/Downloads/Queue2/Alexis\ FAwx/Bigwetbutts\ -\ Alexis\ Fawx\ -\ Anal\ On\ The\ Open\ Sea\ \(2021-08-31\).mp4';
