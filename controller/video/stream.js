@@ -18,7 +18,7 @@ class VideoStream {
         const video = await VideoOrm.retrieveVideoByUuid(id);
         const videoDetail = await VideoOrm.retrieveVideoDetailByVideoIdAndUuid(video.id, key);
         try {
-            let file = videoDetail.file2 || '/Users/e043280/Temporary/Downloads/Queue2/Alexis\ FAwx/Bigwetbutts\ -\ Alexis\ Fawx\ -\ Anal\ On\ The\ Open\ Sea\ \(2021-08-31\).mp4'
+            let file = videoDetail.file;
             if (!fs.existsSync(file)) {
                 throw "File does not exist"
             }
