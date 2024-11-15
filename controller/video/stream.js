@@ -10,6 +10,11 @@ class VideoStream {
     }
     async download(req, res) {
         const { id, key, range } = req.query;
+        if (!id || !key) {
+            res.status(400);
+            res.send({message: "Missing arguments in request"});
+            return res;
+        }
         const video = await VideoOrm.retrieveVideoByUuid(id);
         const videoDetail = await VideoOrm.retrieveVideoDetailByVideoIdAndUuid(video.id, key);
         try {
