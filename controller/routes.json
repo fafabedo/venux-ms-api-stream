@@ -1,0 +1,24 @@
+[
+  {
+    "path": "/",
+    "controller": "health:home",
+    "method": "get",
+    "description": "Check health of service",
+    "public": true
+  },
+  {
+    "path": "/health",
+    "controller": "health:test",
+    "method": "get",
+    "description": "Check health of service",
+    "public": true
+  },
+  {
+    "path": "/video/download",
+    "controller": "video/stream:download",
+    "method": "get",
+    "description": "Video: Video stream service HLS",
+    "params": "id",
+    "public": true
+  }
+]

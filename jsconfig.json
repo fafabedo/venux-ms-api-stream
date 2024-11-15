@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "@vx-orm/*": ["./venux-library/ORM/*"],
+            "@vx-utils/*": ["./venux-library/Utils/*"],
+          }
+    }
+}

@@ -1,0 +1,3 @@
+[submodule "venux-library"]
+	path = venux-library
+	url = git@github.com:fafabedo/venux-nodejs-library.git
