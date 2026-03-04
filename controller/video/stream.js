@@ -18,7 +18,7 @@ class VideoStream {
     async stream(req, res) {
         const { uuid} = req.params;
         const { range } = req.query;
-        if (!uuid || !key) {
+        if (!uuid) {
             res.status(400);
             res.send({message: "Missing arguments in request"});
             return res;
