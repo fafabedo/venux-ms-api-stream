@@ -20,5 +20,13 @@
     "description": "Video: Video stream link",
     "params": "uuid, key",
     "public": true
+  },
+  {
+    "path": "/video/stream/:uuid",
+    "controller": "video/stream:stream",
+    "method": "get",
+    "description": "Video: Video stream link",
+    "params": "uuid, key",
+    "public": true
   }
 ]

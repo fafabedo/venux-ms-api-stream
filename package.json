@@ -17,6 +17,7 @@
     "hls-server": "^1.5.0",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
+    "md5": "^2.3.0",
     "module-alias": "^2.2.3",
     "moment": "^2.30.1",
     "moment-guess": "^1.2.4",
