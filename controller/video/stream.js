@@ -28,7 +28,7 @@ class VideoStream {
             let videoPath = videoDetail.file;
             if (!fs.existsSync(videoPath)) {
                 res.status(500);
-                res.send({message: "Missing arguments in request"});
+                res.send({message: "Missing file"});
                 return res;
             }
             const fileSize = videoDetail.size;
