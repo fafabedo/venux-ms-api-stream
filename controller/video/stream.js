@@ -8,13 +8,13 @@ class VideoStream {
         this.app = null;
         VideoOrm.setUserServiceRole()
     }
-    async retrieveVideoFile(uuid) {
-        return new Promise(async (resolve, reject) => {
-            try {
-                await VideoOrm.retrieveVideoByUuid(uuid)
-            }
-        });
-    }
+    // async retrieveVideoFile(uuid) {
+    //     return new Promise(async (resolve, reject) => {
+    //         try {
+    //             await VideoOrm.retrieveVideoByUuid(uuid)
+    //         }
+    //     });
+    // }
     async stream(req, res) {
         const { uuid} = req.params;
         const { range } = req.query;
@@ -65,7 +65,7 @@ class VideoStream {
         }
     }
     async download(req, res) {
-        const { uuid, key} = req.params;
+        const { uuid, key } = req.params;
         const { range } = req.query;
         if (!uuid || !key) {
             res.status(400);
@@ -78,7 +78,7 @@ class VideoStream {
             let videoPath = videoDetail.file;
             if (!fs.existsSync(videoPath)) {
                 res.status(500);
-                res.send({message: "Missing arguments in request"});
+                res.send({message: "Missing file"});
                 return res;
             }
             const fileSize = videoDetail.size;
