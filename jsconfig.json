@@ -4,6 +4,7 @@
             "@vx-auth/*": ["./venux-library/Auth/*"],
             "@vx-orm/*": ["./venux-library/ORM/*"],
             "@vx-utils/*": ["./venux-library/Utils/*"],
+            "@vx-video/*": ["./venux-library/Video/*"],
           }
     }
 }
