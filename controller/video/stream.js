@@ -63,7 +63,6 @@ class VideoStream {
     // }
     async stream(req, res) {
         const { uuid} = req.params;
-        const { range } = req.query;
         if (!uuid) {
             res.status(400);
             res.send({message: "Missing arguments in request"});
@@ -103,6 +102,7 @@ class VideoStream {
                 const headers = {
                     'Content-Length': fileSize,
                     'Content-Type': 'video/mp4',
+                    'Accept-Ranges': 'bytes',
                 };
                 const file = sshConfig
                     ? await remoteReadStream(sshConfig, videoPath)
@@ -119,7 +119,6 @@ class VideoStream {
     }
     async download(req, res) {
         const { uuid, key } = req.params;
-        const { range } = req.query;
         if (!uuid || !key) {
             res.status(400);
             res.send({message: "Missing arguments in request"});
@@ -160,6 +159,7 @@ class VideoStream {
                 const headers = {
                     'Content-Length': fileSize,
                     'Content-Type': 'video/mp4',
+                    'Accept-Ranges': 'bytes',
                 };
                 const file = sshConfig
                     ? await remoteReadStream(sshConfig, videoPath)
