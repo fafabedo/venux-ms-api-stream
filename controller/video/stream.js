@@ -26,6 +26,7 @@ class VideoStream {
         const videoDetail = await VideoOrm.retrieveVideoDetailByVideoUuid(uuid);
         try {
             let videoPath = videoDetail.file;
+            console.log({videoPath})
             if (!fs.existsSync(videoPath)) {
                 res.status(500);
                 res.send({message: "Missing file"});

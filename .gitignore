@@ -1,6 +1,7 @@
 .vscode
 .env
 .encode
+.claude
 *.mkv
 *.mp4
 *.html
